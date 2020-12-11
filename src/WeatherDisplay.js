@@ -26,7 +26,7 @@ export default function WeatherDisplay() {
                   className="btn btn-outline-light my-2 my-sm-0"
                   type="submit"
                 >
-                  <i className="fas fa-map-marker-alt">Current</i>
+                  <i className="fas fa-map-marker-alt">Now</i>
                 </button>
                 <button
                   id="search"
