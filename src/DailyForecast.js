@@ -10,7 +10,7 @@ export default function DailyForecast() {
             <div class="day col-2">
                 <p><strong>Wed</strong></p>
         <ReactAnimatedWeather
-        icon="SNOW"
+        icon="CLEAR_DAY"
         color="white"
         size={50}
         animate={true}
@@ -20,7 +20,7 @@ export default function DailyForecast() {
             <div class="day col-2">
                 <p><strong>Thu</strong></p>
                  <ReactAnimatedWeather
-        icon="SNOW"
+        icon="CLEAR_DAY"
         color="white"
         size={50}
         animate={true}
@@ -30,7 +30,7 @@ export default function DailyForecast() {
             <div class="day col-2">
                 <p><strong>Fri</strong></p>
                  <ReactAnimatedWeather
-        icon="SNOW"
+        icon="CLEAR_DAY"
         color="white"
         size={50}
         animate={true}
@@ -40,7 +40,7 @@ export default function DailyForecast() {
             <div class="day col-2">
                 <p><strong>Sat</strong></p>
                  <ReactAnimatedWeather
-        icon="SNOW"
+        icon="CLEAR_DAY"
         color="white"
         size={50}
         animate={true}
@@ -50,7 +50,7 @@ export default function DailyForecast() {
             <div class="day col-2">
                 <p><strong>Sun</strong></p>
                 <ReactAnimatedWeather
-        icon="SNOW"
+        icon="CLEAR_DAY"
         color="white"
         size={50}
         animate={true}

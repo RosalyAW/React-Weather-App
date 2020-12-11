@@ -10,13 +10,6 @@ ul {
 li {
   padding: 0px;
 }
-img {
-  display: block;
-  margin: 0 auto;
-  margin-top: -20px;
-  margin-left: -5px;
-  width: 70px;
-}
 .navbar {
   justify-content: space-evenly;
 }
@@ -39,10 +32,10 @@ img {
   text-transform: capitalize;
   font-size: 20px;
 }
-#topIcon {
+.TopIcon {
   position: relative;
-  left: 10px;
-  width: 120px;
+  left: 40px;
+  top: 20px;
 }
 .temp-current {
   position: relative;

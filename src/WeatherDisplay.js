@@ -1,4 +1,5 @@
 import React from "react";
+import ReactAnimatedWeather from 'react-animated-weather';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import "./WeatherDisplay.css";
@@ -68,13 +69,13 @@ export default function WeatherDisplay() {
           </div>
 
           <div className="row">
-            <div className="col-4">
-              <img
-                src="Sunny-icon.png"
-                alt="Sunny"
-                id="topIcon"
-                className="topWeatherIcon"
-              />
+            <div className="TopIcon col-4">
+             <ReactAnimatedWeather
+        icon="CLEAR_DAY"
+        color="white"
+        size={100}
+        animate={true}
+      />
             </div>
             <div className="col-4" id="tempDescription">
               <h1 className="temp-current" id="current-temp">
