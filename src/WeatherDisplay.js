@@ -14,7 +14,8 @@ export default function WeatherDisplay() {
     sunset: "17.45h",
     humidity: 80,
     wind: 10
-  };
+    };
+    //ISSUE: Make the Icon from fontawesome work!!
     return (
     <div className="WeatherDisplay">
  <nav className="navbar top navbar">
@@ -25,14 +26,14 @@ export default function WeatherDisplay() {
                   className="btn btn-outline-light my-2 my-sm-0"
                   type="submit"
                 >
-                  <i className="fas fa-map-marker-alt"></i>
+                  <i className="fas fa-map-marker-alt">Current</i>
                 </button>
                 <button
                   id="search"
                   className="btn btn-outline-light my-2 my-xs-0"
                   type="submit"
                 >
-                  <i className="fas fa-search"></i>
+                  <i className="fas fa-search">Search</i>
                 </button>
                 <input
                   id="search-text-input"

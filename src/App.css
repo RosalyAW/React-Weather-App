@@ -4,12 +4,12 @@
   box-sizing: border-box;
   background-image: url(https://i.pinimg.com/564x/51/17/90/5117908f2bd3aa0e0aaf4f2655cd8bfa.jpg);
   border: 1px solid #8ed7ce;
-  border-radius: 5px;
+  border-radius: 20px;
   display: block;
   margin: 20px auto;
   padding: 10px;
-  max-width: 500px;
-  max-height: 650px;
+  max-width: 475px;
+  max-height: 600px;
 }
 footer {
   text-align: center;

@@ -22,31 +22,33 @@ li {
   font-size: 20px;
   text-align: center;
 }
+.TopIcon {
+  position: relative;
+  left: 40px;
+  top: 15px;
+}
 #tempDescription {
   position: relative;
   display: block;
   text-align: center;
   top: 1em;
 }
-#description {
-  text-transform: capitalize;
-  font-size: 20px;
-}
-.TopIcon {
-  position: relative;
-  left: 40px;
-  top: 20px;
-}
 .temp-current {
   position: relative;
-  top: 20px;
+  top: 30px;
   font-size: 55px;
+}
+#description {
+  position: relative;
+  top: 20px;
+  text-transform: capitalize;
+  font-size: 25px;
 }
 .details {
   position: relative;
   padding-left: 0px;
   padding-right: 0px;
-  top: 60px;
+  top: 120px;
   line-height: 1em;
-  font-size: 15px;
+  font-size: 18px;
 }
