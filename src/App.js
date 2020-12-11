@@ -4,7 +4,7 @@ import WeatherDisplay from "./WeatherDisplay";
 import "./App.css";
 
 
-export default function App() {
+function App() {
 
   return (
     <div className="App">
@@ -15,3 +15,4 @@ export default function App() {
   );
 }
 
+export default App;
