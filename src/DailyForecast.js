@@ -1,4 +1,5 @@
 import React from "react";
+import ReactAnimatedWeather from 'react-animated-weather';
 
 export default function DailyForecast() {
     return (
@@ -8,27 +9,52 @@ export default function DailyForecast() {
             </div>
             <div class="day col-2">
                 <p><strong>Wed</strong></p>
-                <i class="f185 far fa-sun"></i>
+        <ReactAnimatedWeather
+        icon="SNOW"
+        color="white"
+        size={50}
+        animate={true}
+      />
                 <p>17<strong>/25°c</strong></p>
             </div>
             <div class="day col-2">
                 <p><strong>Thu</strong></p>
-                <i class="f185 far fa-sun"></i>
+                 <ReactAnimatedWeather
+        icon="SNOW"
+        color="white"
+        size={50}
+        animate={true}
+      />
                 <p>17<strong>/25°c</strong></p>
             </div>
             <div class="day col-2">
                 <p><strong>Fri</strong></p>
-                <i class="f185 far fa-sun"></i>
+                 <ReactAnimatedWeather
+        icon="SNOW"
+        color="white"
+        size={50}
+        animate={true}
+      />
                 <p>17<strong>/25°c</strong></p>
             </div>
             <div class="day col-2">
                 <p><strong>Sat</strong></p>
-                <i class="f185 far fa-sun"></i>
+                 <ReactAnimatedWeather
+        icon="SNOW"
+        color="white"
+        size={50}
+        animate={true}
+      />
                 <p>17<strong>/25°c</strong></p>
             </div>
             <div class="day col-2">
                 <p><strong>Sun</strong></p>
-                <i class="f185 far fa-sun"></i>
+                <ReactAnimatedWeather
+        icon="SNOW"
+        color="white"
+        size={50}
+        animate={true}
+      />
                 <p>17<strong>/25°c</strong></p>
             </div>
         </div>
