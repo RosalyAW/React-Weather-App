@@ -1,11 +1,14 @@
 import React from "react";
 import WeatherDisplay from "./WeatherDisplay";
+import { Container } from "react-bootstrap";
+import DailyForecast from "./DailyForecast";
 import Footer from "./Footer";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import "./App.css";
 import "./WeatherDisplay.css";
-import { Container } from "react-bootstrap";
+import "./DailyForecast.css";
+
 
 
 function App() {
@@ -13,7 +16,8 @@ function App() {
   return (
     <Container>
     <div className="App">
-      <WeatherDisplay />
+        <WeatherDisplay />
+        <DailyForecast />
     </div>
       <Footer />
       </Container>
