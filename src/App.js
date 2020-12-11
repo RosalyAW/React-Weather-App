@@ -3,15 +3,14 @@ import WeatherDisplay from "./WeatherDisplay";
 import 'bootstrap/dist/css/bootstrap.css';
 
 import "./App.css";
+import "./WeatherDisplay.css";
 
 
 function App() {
 
   return (
     <div className="App">
-      <div className="container">
         <WeatherDisplay />
-      </div>
     </div>
   );
 }

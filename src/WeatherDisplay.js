@@ -1,6 +1,6 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.css';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import "./WeatherDisplay.css";
 
 export default function WeatherDisplay() {
@@ -15,7 +15,7 @@ export default function WeatherDisplay() {
     wind: 10
   };
     return (
-    <div className="App">
+    <div className="WeatherDisplay">
  <nav className="navbar top navbar">
             <div className="searchBar">
               <form id="search-button" className="form-inline">
