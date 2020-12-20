@@ -6,13 +6,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "./WeatherDisplay.css";
 
 export default function WeatherDisplay(props) {
-  const [Conditions, setConditions] = useState({ ready: false });
+  const [Conditions, setConditions] = useState({});
+  const [ready, setReady] = useState(false);
   const [city, setCity] = useState(props.defaultCity);
   
   function showConditionsResponse(response) {
-    console.log(response.data);
     setConditions({
-      ready: true,
       city: response.data.name,
       date: "Tue-23 Sept 2020-22:45h",
       temperature: response.data.main.temp,
@@ -22,32 +21,25 @@ export default function WeatherDisplay(props) {
       sunset: "17.45h",
       sunrise: "08.00h"
     });
-  }
-  function handleSubmit(event) {
-    event.preventDefault();
-    Submit();
+    setReady(true);
   }
   function handleCitySubmit(event) {
     setCity(event.target.value);
   }
-  function Submit() {
-    let ApiKey = "4f7f9f9b241615e6a8ecfd81de742bd2";
+  function Submit(event) {
+    event.preventDefault();
+    let ApiKey = "5c57e0689379640fccf1044191d9a54c";
     let Unit = "metric";
     let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=${Unit}`
-    
     Axios.get(Url).then(showConditionsResponse);
   }
   //ISSUE: Make the Icon from fontawesome work!!
-  if (Conditions.ready) {
-    return (
-      <p>Page is Loading...</p>
-    );
-  } else {
+  if (ready !== true) {
     return (
       <div className="WeatherDisplay">
         <nav className="navbar top navbar">
           <div className="searchBar">
-            <form onSubmit={handleSubmit} id="search-button" className="form-inline">
+            <form onSubmit={Submit} id="search-button" className="form-inline">
               <button
                 id="currentButton"
                 className="btn btn-outline-light my-2 my-sm-0"
@@ -122,6 +114,10 @@ export default function WeatherDisplay(props) {
           </div>
         </div>
       </div>
+    );
+  } else {
+    return (
+      <p>Page is Loading...</p>
     );
   }
 }
