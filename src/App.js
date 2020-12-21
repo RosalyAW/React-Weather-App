@@ -16,7 +16,7 @@ function App() {
   return (
     <Container>
     <div className="App">
-        <WeatherDisplay />
+        <WeatherDisplay defaultCity="Paris"/>
         <DailyForecast />
     </div>
       <Footer />

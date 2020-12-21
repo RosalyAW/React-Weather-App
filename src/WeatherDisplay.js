@@ -1,40 +1,43 @@
-import React, {useState} from "react";
-import ReactAnimatedWeather from 'react-animated-weather';
+import React, { useState } from "react";
+import ReactAnimatedWeather from "react-animated-weather";
 import Axios from "axios";
 
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherDisplay.css";
 
 export default function WeatherDisplay(props) {
   const [Conditions, setConditions] = useState({});
   const [ready, setReady] = useState(false);
   const [city, setCity] = useState(props.defaultCity);
-  
+
   function showConditionsResponse(response) {
     setConditions({
       city: response.data.name,
       date: "Tue-23 Sept 2020-22:45h",
-      temperature: response.data.main.temp,
+      temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       icon: "icon",
       sunset: "17.45h",
-      sunrise: "08.00h"
+      sunrise: "08.00h",
     });
     setReady(true);
   }
   function handleCitySubmit(event) {
     setCity(event.target.value);
   }
-  function Submit(event) {
-    event.preventDefault();
+  function search() {
     let ApiKey = "5c57e0689379640fccf1044191d9a54c";
     let Unit = "metric";
-    let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=${Unit}`
+    let Url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=${Unit}`;
     Axios.get(Url).then(showConditionsResponse);
   }
+  function Submit(event) {
+    event.preventDefault();
+    search();
+  }
   //ISSUE: Make the Icon from fontawesome work!!
-  if (ready !== true) {
+  if (ready) {
     return (
       <div className="WeatherDisplay">
         <nav className="navbar top navbar">
@@ -68,18 +71,17 @@ export default function WeatherDisplay(props) {
                 type="submit"
               >
                 °C
-                </button>
+              </button>
               <button
                 id="fahrenheit-button"
                 className="btn btn-outline-light my-2 my-xs-0"
                 type="submit"
               >
                 °F
-                </button>
+              </button>
             </form>
           </div>
         </nav>
-
         <div className="row">
           <div className="col-12" id="cityTime">
             <h1 id="city">
@@ -88,7 +90,6 @@ export default function WeatherDisplay(props) {
             <p id="currentTime">{Conditions.date}</p>
           </div>
         </div>
-
         <div className="row">
           <div className="TopIcon col-4">
             <ReactAnimatedWeather
@@ -100,8 +101,7 @@ export default function WeatherDisplay(props) {
           </div>
           <div className="col-4" id="tempDescription">
             <h1 className="temp-current" id="current-temp">
-              {Conditions.temperature}
-            </h1>
+              {Conditions.temperature}ºc</h1>
             <p id="description">{Conditions.description}</p>
           </div>
           <div className="col-4">
@@ -109,15 +109,14 @@ export default function WeatherDisplay(props) {
               <li id="sunrise">Sunrise: {Conditions.sunrise}</li>
               <li id="sunset">Sunset:{Conditions.sunset}</li>
               <li id="humidity">Humidity:{Conditions.humidity}</li>
-              <li id="windSpeed">Wind:{Conditions.wind}</li>
+              <li id="windSpeed">Wind:{Conditions.wind}km/h</li>
             </ul>
           </div>
         </div>
       </div>
     );
   } else {
-    return (
-      <p>Page is Loading...</p>
-    );
+    search();
+    return <p>Page is Loading...</p>;
   }
 }
