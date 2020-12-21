@@ -17,7 +17,8 @@ export default function WeatherDisplay(props) {
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
-      wind: response.data.wind.speed,
+      humidity:response.data.main.humidity,
+      wind: Math.round(response.data.wind.speed),
       icon: "icon",
       sunset: "17.45h",
       sunrise: "08.00h",
@@ -109,9 +110,9 @@ export default function WeatherDisplay(props) {
           <div className="col-4">
             <ul className="details">
               <li id="sunrise">Sunrise: {Conditions.sunrise}</li>
-              <li id="sunset">Sunset:{Conditions.sunset}</li>
-              <li id="humidity">Humidity:{Conditions.humidity}</li>
-              <li id="windSpeed">Wind:{Conditions.wind}km/h</li>
+              <li id="sunset">Sunset: {Conditions.sunset}</li>
+              <li id="humidity">Humidity: {Conditions.humidity} %</li>
+              <li id="windSpeed">Wind: {Conditions.wind} Km/h</li>
             </ul>
           </div>
         </div>
