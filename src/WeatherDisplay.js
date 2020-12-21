@@ -63,6 +63,7 @@ export default function WeatherDisplay(props) {
                 type="search"
                 placeholder="Search for city..."
                 aria-label="Search"
+                autoComplete="off"
                 onChange={handleCitySubmit}
               />
               <button
