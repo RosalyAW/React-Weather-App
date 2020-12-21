@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactAnimatedWeather from "react-animated-weather";
+import DateFormat from "./DateFormat.js";
 import Axios from "axios";
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -13,7 +14,7 @@ export default function WeatherDisplay(props) {
   function showConditionsResponse(response) {
     setConditions({
       city: response.data.name,
-      date: "Tue-23 Sept 2020-22:45h",
+      date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
@@ -88,7 +89,7 @@ export default function WeatherDisplay(props) {
             <h1 id="city">
               <strong>{Conditions.city}</strong>
             </h1>
-            <p id="currentTime">{Conditions.date}</p>
+            <p id="currentTime"><DateFormat date={Conditions.date}/></p>
           </div>
         </div>
         <div className="row">
