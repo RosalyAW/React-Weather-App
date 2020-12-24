@@ -70,14 +70,7 @@ export default function WeatherDisplay(props) {
                 autoComplete="off"
                 onChange={handleCitySubmit}
               />
-              <CovertionButton celsius={Conditions.temperature}/>
-              <button
-                id="fahrenheit-button"
-                className="btn btn-outline-light my-2 my-xs-0"
-                type="submit"
-              >
-                °F
-              </button>
+              <CovertionButton convertion={Conditions.temperature} />
             </form>
           </div>
         </nav>
