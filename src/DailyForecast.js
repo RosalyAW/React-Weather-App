@@ -1,6 +1,7 @@
 import React from "react";
 import ReactAnimatedWeather from 'react-animated-weather';
 
+
 export default function DailyForecast() {
     return (
         <div className="daily-forecast row">

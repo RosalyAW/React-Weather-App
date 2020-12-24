@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import ReactAnimatedWeather from "react-animated-weather";
 import DateFormat from "./DateFormat.js";
 import Axios from "axios";
+import DisplayIcon from "./DisplayIcon.js";
+import CovertionButton from "./CovertionButton.js";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherDisplay.css";
+
 
 export default function WeatherDisplay(props) {
   const [Conditions, setConditions] = useState({});
@@ -19,7 +21,7 @@ export default function WeatherDisplay(props) {
       description: response.data.weather[0].description,
       humidity:response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
-      icon: "icon",
+      icon: response.data.weather[0].icon,
       sunset: "17.45h",
       sunrise: "08.00h",
     });
@@ -38,7 +40,7 @@ export default function WeatherDisplay(props) {
     event.preventDefault();
     search();
   }
-  //ISSUE: Make the Icon from fontawesome work!!
+  
   if (ready) {
     return (
       <div className="WeatherDisplay">
@@ -68,13 +70,7 @@ export default function WeatherDisplay(props) {
                 autoComplete="off"
                 onChange={handleCitySubmit}
               />
-              <button
-                id="celcius-button"
-                className="btn btn-outline-light my-2 my-xs-0"
-                type="submit"
-              >
-                °C
-              </button>
+              <CovertionButton celsius={Conditions.temperature}/>
               <button
                 id="fahrenheit-button"
                 className="btn btn-outline-light my-2 my-xs-0"
@@ -95,12 +91,7 @@ export default function WeatherDisplay(props) {
         </div>
         <div className="row">
           <div className="TopIcon col-4">
-            <ReactAnimatedWeather
-              icon="CLEAR_DAY"
-              color="white"
-              size={100}
-              animate={true}
-            />
+            <DisplayIcon code={Conditions.icon}/>
           </div>
           <div className="col-4" id="tempDescription">
             <h1 className="temp-current" id="current-temp">

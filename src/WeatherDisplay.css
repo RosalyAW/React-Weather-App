@@ -22,7 +22,7 @@ li {
   font-size: 20px;
   text-align: center;
 }
-.TopIcon {
+.TopIcon canvas {
   position: relative;
   left: 40px;
   top: 40px;
