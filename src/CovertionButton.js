@@ -5,7 +5,7 @@ export default function ConvertionButton(props) {
 
     function ConvertionCelsius(event) {
         event.preventDefault();
-        setUnits = ("celcius");
+        setUnits("celcius");
     }
     function celsiusToFahrenheit(event){
         event.preventDefault();
@@ -13,24 +13,19 @@ return (props.celsius * 9) / 5 + 32;
     }
     function ConvertionFahrenheit(event) {
         event.preventDefault();
-        setUnits = ("fahrenheit");
+        setUnits("fahrenheit");
     }
     
-    if (celsius) {
+    if (units) {
         return (
             <div className="ConvertionButton">
                 <button
                     id="fahrenheit-button"
                     className="btn btn-outline-light my-2 my-xs-0"
                     type="submit"
-                    onClick={ConvertionCelsius}
-                >
+                    onClick={ConvertionCelsius}>
                     {Math.round(props.celsius)}°C
     </button>
-            </div>
-        );
-    } else {
-        return (
             <div className="ConvertionButton">
                 <button
                     id="fahrenheit-button"
@@ -40,7 +35,11 @@ return (props.celsius * 9) / 5 + 32;
                 >
                   {Math.round(celsiusToFahrenheit())}  °F
               </button >
-            </div>
+                </div>
+                </div>
         );
+    }
+    else {
+        return (null);
     }
 }
