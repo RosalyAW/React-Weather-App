@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import DateFormat from "./DateFormat.js";
 import Axios from "axios";
 import DisplayIcon from "./DisplayIcon.js";
-import CovertionButton from "./CovertionButton.js";
+import CovertionButton from "./ConvertionButton.js";
+import DailyForecast from "./DailyForecast.js";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherDisplay.css";
+
 
 
 export default function WeatherDisplay(props) {
@@ -99,6 +101,7 @@ export default function WeatherDisplay(props) {
               <li id="windSpeed">Wind: {Conditions.wind} Km/h</li>
             </ul>
           </div>
+          <DailyForecast city={Conditions.city}/>
         </div>
       </div>
     );
