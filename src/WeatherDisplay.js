@@ -12,6 +12,7 @@ export default function WeatherDisplay(props) {
   const [Conditions, setConditions] = useState({});
   const [ready, setReady] = useState(false);
   const [city, setCity] = useState(props.defaultCity);
+  const [units, setUnits] = useState("celsius");
 
   function showConditionsResponse(response) {
     setConditions({
@@ -70,7 +71,7 @@ export default function WeatherDisplay(props) {
                 autoComplete="off"
                 onChange={handleCitySubmit}
               />
-              <CovertionButton celsius={Conditions.temperature} />
+              <CovertionButton setUnits={setUnits} />
             </form>
           </div>
         </nav>
@@ -86,9 +87,8 @@ export default function WeatherDisplay(props) {
           <div className="TopIcon col-4">
             <DisplayIcon code={Conditions.icon}/>
           </div>
-          <div className="col-4" id="tempDescription">
-            <h1 className="temp-current" id="current-temp">
-              {Conditions.temperature}ºc</h1>
+          <div className="col-4" id="tempDescription"> 
+            {units === "celsius" ? <h1 className="temp-current" id="current-temp"> {Math.round(Conditions.temperature)}°c </h1> : <h1 className="temp-current" id="current-temp">{Math.round(Conditions.temperature * 9 / 5 + 32)}°f</h1>}
             <p id="description">{Conditions.description}</p>
           </div>
           <div className="col-4">

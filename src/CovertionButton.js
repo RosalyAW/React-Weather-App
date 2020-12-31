@@ -1,22 +1,14 @@
-import React, {useState} from "react";
+import React from "react";
 
 export default function ConvertionButton(props) {
-    let { units, setUnits } = useState("celsius");
-
+      function ConvertionFahrenheit(event) {
+        event.preventDefault();
+        props.setUnits("fahrenheit");
+    }
     function ConvertionCelsius(event) {
         event.preventDefault();
-        setUnits("celcius");
+        props.setUnits("celsius");
     }
-    function celsiusToFahrenheit(event){
-        event.preventDefault();
-return (props.celsius * 9) / 5 + 32;
-    }
-    function ConvertionFahrenheit(event) {
-        event.preventDefault();
-        setUnits("fahrenheit");
-    }
-    
-    if (units) {
         return (
             <div className="ConvertionButton">
                 <button
@@ -24,7 +16,7 @@ return (props.celsius * 9) / 5 + 32;
                     className="btn btn-outline-light my-2 my-xs-0"
                     type="submit"
                     onClick={ConvertionCelsius}>
-                    {Math.round(props.celsius)}°C
+                    °C
     </button>
             <div className="ConvertionButton">
                 <button
@@ -33,13 +25,9 @@ return (props.celsius * 9) / 5 + 32;
                     type="submit"
                     onClick={ConvertionFahrenheit}
                 >
-                  {Math.round(celsiusToFahrenheit())}  °F
+                        °F
               </button >
                 </div>
                 </div>
         );
     }
-    else {
-        return (null);
-    }
-}
