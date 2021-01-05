@@ -26,6 +26,7 @@ li {
   position: relative;
   left: 40px;
   top: 40px;
+  width: 90px;
 }
 #tempDescription {
   position: relative;

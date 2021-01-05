@@ -47,10 +47,10 @@ export default function DailyForecast(props) {
         );
     }
     else {
-          let apiKey = "5c57e0689379640fccf1044191d9a54c";
+    let apiKey = "5c57e0689379640fccf1044191d9a54c";
     let Unit = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=${Unit}`
     Axios.get(apiUrl).then(showDailyForecast);
-        return ("Loading");
+        return ("");
     }
 }

@@ -2,9 +2,6 @@ h6 {
   font-size: 25px;
   text-align: left;
 }
-displayIcon {
-  width: 100px;
-}
 .daily-forecast {
   display: inline-flexbox;
   justify-content: space-evenly;
