@@ -16,7 +16,7 @@ export default function DailyForecast(props) {
         return (
             <div className="daily-forecast row">
                 <div className="col-12">
-                    <h6><strong> Daily forecast</strong></h6>
+                    <h6><strong> Hourly forecast</strong></h6>
                 </div>
                 <div className="day col-2">
                     <p><strong>{new Date(Forecast.list[0].dt * 1000).getHours()}:00</strong></p>

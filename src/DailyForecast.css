@@ -16,5 +16,6 @@ h6 {
   padding-bottom: 0px;
   padding-left: 10px;
   padding-right: 10px;
+  border-radius: 5px;
   box-shadow: 2px 2px 2px 2px #018093;
 }
