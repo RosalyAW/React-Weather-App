@@ -2,7 +2,9 @@ h1 {
   text-transform: capitalize;
   text-align: center;
   font-size: 48px;
-  padding-top: 0;
+  padding-top: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 ul {
   list-style: none;
@@ -18,9 +20,15 @@ li {
   padding: 0px;
   margin: 0 auto;
 }
+#currentDate {
+  font-size: 20px;
+  text-align: center;
+  margin: 0px;
+}
 #currentTime {
   font-size: 20px;
   text-align: center;
+  margin: 0px;
 }
 .TopIcon canvas {
   position: relative;

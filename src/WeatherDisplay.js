@@ -4,11 +4,10 @@ import Axios from "axios";
 import DisplayIcon from "./DisplayIcon.js";
 import CovertionButton from "./ConvertionButton.js";
 import DailyForecast from "./DailyForecast.js";
-
+import Timeformat from "./TimeFormat.js";
 import "bootstrap/dist/css/bootstrap.css";
 import "./WeatherDisplay.css";
-
-
+import TimeFormat from "./TimeFormat.js";
 
 export default function WeatherDisplay(props) {
   const [Conditions, setConditions] = useState({});
@@ -19,14 +18,15 @@ export default function WeatherDisplay(props) {
   function showConditionsResponse(response) {
     setConditions({
       city: response.data.name,
-      date: new Date(response.data.dt * 1000),
+      date: DateFormat(response.data.dt * 1000),
+      currentTime: TimeFormat(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity:response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       icon: response.data.weather[0].icon,
-      sunset: "17.45h",
-      sunrise: "08.00h",
+      sunset:Timeformat(response.data.sys.sunset * 1000),
+      sunrise:Timeformat(response.data.sys.sunrise * 1000),
     });
     setReady(true);
   }
@@ -50,13 +50,6 @@ export default function WeatherDisplay(props) {
         <nav className="navbar top navbar">
           <div className="searchBar">
             <form onSubmit={Submit} id="search-button" className="form-inline">
-              <button
-                id="currentButton"
-                className="btn btn-outline-light my-2 my-sm-0"
-                type="submit"
-              >
-                <i className="fas fa-map-marker-alt">Now</i>
-              </button>
               <button
                 id="search"
                 className="btn btn-outline-light my-2 my-xs-0"
@@ -82,7 +75,8 @@ export default function WeatherDisplay(props) {
             <h1 id="city">
               <strong>{Conditions.city}</strong>
             </h1>
-            <p id="currentTime"><DateFormat date={Conditions.date}/></p>
+            <p id="currentDate">{Conditions.date}</p>
+            <p id="currentTime">{Conditions.currentTime}h</p>
           </div>
         </div>
         <div className="row">
@@ -95,8 +89,8 @@ export default function WeatherDisplay(props) {
           </div>
           <div className="col-4">
             <ul className="details">
-              <li id="sunrise">Sunrise: {Conditions.sunrise}</li>
-              <li id="sunset">Sunset: {Conditions.sunset}</li>
+              <li id="sunrise"> Sunrise: {Conditions.sunrise} am </li>
+              <li id="sunset"> Sunset: {Conditions.sunset} pm </li>
               <li id="humidity">Humidity: {Conditions.humidity} %</li>
               <li id="windSpeed">Wind: {Conditions.wind} Km/h</li>
             </ul>
