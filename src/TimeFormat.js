@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function TimeFormat(timestamp){
  let time = new Date(timestamp);
   let hours = time.getHours();
